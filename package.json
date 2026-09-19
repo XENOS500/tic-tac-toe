@@ -7,13 +7,15 @@
   ],
   "scripts": {
     "build:shared": "npm run build --workspace=@anti-gravity/shared",
-    "build": "npm run build --workspace=@anti-gravity/shared && npm run build --workspace=@anti-gravity/server && npm run build --workspace=@anti-gravity/client",
+    "build:server": "npm run build:shared && npm run build --workspace=@anti-gravity/server",
+    "build:client": "npm run build:shared && npm run build --workspace=@anti-gravity/client",
+    "build": "npm run build:shared && npm run build --workspace=@anti-gravity/server && npm run build --workspace=@anti-gravity/client",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "dev:server": "npm run dev --workspace=@anti-gravity/server",
     "dev:client": "npm run dev --workspace=@anti-gravity/client"
   },
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^5.7.2"
   }
 }
