@@ -1,5 +1,5 @@
 import http from 'http';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { Server, Socket } from 'socket.io';
 import { C2SEvents, S2CEvents, HEALTH_CHECK_INTERVAL_MS } from '@anti-gravity/shared';
@@ -15,7 +15,7 @@ const roomManager = new RoomManager();
  * Health Check Route
  * Used by Render, uptime monitors (UptimeRobot, cron-job.org), and internal monitor
  */
-app.get('/health', (_req, res) => {
+app.get('/health', (_req: Request, res: Response) => {
   res.status(200).json({
     status: 'ok',
     uptimeSeconds: Math.floor(process.uptime()),

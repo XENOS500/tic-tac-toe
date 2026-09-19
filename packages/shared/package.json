@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit",
     "watch": "tsc -w"
   },
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^5.7.2"
   }
 }
