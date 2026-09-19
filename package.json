@@ -1,0 +1,19 @@
+{
+  "name": "anti-gravity-tic-tac-toe",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace=@anti-gravity/shared",
+    "build": "npm run build --workspace=@anti-gravity/shared && npm run build --workspace=@anti-gravity/server && npm run build --workspace=@anti-gravity/client",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:server": "npm run dev --workspace=@anti-gravity/server",
+    "dev:client": "npm run dev --workspace=@anti-gravity/client"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
